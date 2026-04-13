@@ -3,44 +3,47 @@
 - **Date:** 2026-04-12
 - **Source:** Claude Code
 - **Project:** swan-command-center
-- **Duration estimate:** ~45 minutes
+- **Duration estimate:** ~2 hours (continuation session)
 - **Status:** Complete
 
 ## Task
 
-Build and deploy the Swan Command Center Next.js dashboard to Vercel, deploy all managed agents, and verify vault connectivity.
+Restructure the entire Swan Command Center to reflect the correct multi-company portfolio with accurate agents, vault structure, and system prompts.
 
 ## Outcome
 
-Built a three-panel Next.js 16 dashboard deployed to Vercel at swan-command-center.vercel.app. The app auto-discovers agents via the Anthropic managed agents API (agent-api-2026-03-01 beta), reads project context and session history from the swan-vault GitHub repo, and provides a streaming task dispatch interface. All seven agents deployed successfully across three companies.
+Rebuilt the entire agent roster and vault project structure from scratch based on Steven's comprehensive company/project upload. Deleted all incorrectly-configured agents (including duplicates from prior deploy runs) and created 9 new agents across 4 active companies plus a utility agent. Restructured the Obsidian vault from 4 incorrectly-organized project folders to 7 company-level folders with detailed CONTEXT.md files.
+
+## Companies & Agents Deployed
+
+- **SwanBill LLC** (3 agents): CEO (Opus), Dev Lead (Sonnet), Marketing (Sonnet)
+  - Projects: Sleepy Storybook, Project Falcon, SOSFiler, PermitVantage, OZ Lease Scout
+- **Providence Fire & Rescue** (2 agents): Director (Opus), Operations (Sonnet)
+- **E2S Transportation LLC** (1 agent): Operations (Sonnet)
+- **E2S Properties AZ LLC** (2 agents): Project Manager (Opus), Legal Research (Sonnet)
+- **e2s Properties LLC** — vault entry only (Airbnb at 623 Tyner Way)
+- **e2s Hospitality California LLC** — vault entry only (Chase The Sun investment)
+- **e2s Hospitality NV LLC** — vault entry only (DMZ and Son / Rosewood Tahoe)
+- **Daily Rollup** (1 agent): utility agent
 
 ## Decisions Made
 
-- Used Next.js App Router with TypeScript and Tailwind CSS
-- Three-column layout: agent roster, task dispatch with SSE streaming, vault browser
-- API routes proxy both Anthropic and GitHub APIs server-side (keys never reach browser)
-- Agents grouped by company with Opus/Sonnet model badges
-- Dark theme by default matching operations aesthetic
+- Swan Ventures LLC removed (not a real entity)
+- e2s Holdings LLC removed (not a real entity)
+- SwanBill LLC is the software holding company for all early-stage projects
+- OZ Lease Scout scope expanded: replace LoopNet/Crexi, tenant matching tools, demographics
+- Hospitality LLCs are passive investments, no dedicated agents needed
+- e2s Properties LLC (one Airbnb) does not need a dedicated agent
 
-## Agents Deployed
+## Blocked / Needs Input
 
-- Providence CEO (Opus): agent_011CZzjZmK4vHR3k2xKfSEj5
-- Providence CTO (Sonnet): agent_011CZzjZoGtM2xiEZizUPE6N
-- Providence CFO (Sonnet): agent_011CZzjZqLAUdSrQP1MP4yzh
-- e2s Director (Opus): agent_011CZzjZsUtpGdkkkwsAnuZK
-- e2s Dev Lead (Sonnet): agent_011CZzjZuXgCPaSva2mfHbow
-- Swan Principal (Opus): agent_011CZzjZwUkKx7kYWn7A8BR4
-- Swan Legal (Sonnet): agent_011CZzjZyYGRzYVhP81MMki4
-
-## Files Changed
-
-- src/lib/anthropic.ts, src/lib/vault.ts
-- src/app/api/agents/route.ts, vault/route.ts, vault/session/route.ts, dispatch/route.ts
-- src/components/AgentRoster.tsx, DispatchPanel.tsx, VaultPanel.tsx, SessionViewer.tsx
-- src/app/page.tsx, globals.css, layout.tsx
+- Vercel redeploy failing (likely Hobby plan build minutes exhausted) — dashboard still live with working agents API, grouping update pending
+- Providence: UH-60 sourcing and capital raise are urgent (July fire season)
+- SOSFiler: 30-day launch target
+- Project Falcon: update due Wednesday
 
 ## Next Steps
 
-- Add dashboard authentication to protect the deployment
-- Add cost monitoring panel using session usage data
-- Connect Vercel GitHub integration for auto-deploy on push
+- Redeploy when Vercel build minutes reset (grouping code already committed)
+- Begin dispatching tasks to agents
+- Connect Vercel GitHub integration for auto-deploy
