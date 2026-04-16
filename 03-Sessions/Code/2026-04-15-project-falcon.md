@@ -2,29 +2,36 @@
 date: 2026-04-15
 source: Claude Code
 project: Project Falcon
-duration: ~10 minutes
-status: Completed
+duration: ~25 minutes
+status: Complete
 ---
 
 ## Task
-Create the student service layer (`src/services/students.ts`) with Supabase-first queries and automatic mock data fallback.
+Implement Tasks 5, 6, and 7 — reusable UI components (Avatar, Tabs, FilterBar), StudentTable, Student Directory page, and routing updates for the Project Falcon SIS.
 
 ## Outcome
-The service exports `getStudents` and `getStudentById`, both of which attempt Supabase first and fall back to mock data on any error. This ensures the app functions correctly regardless of whether the database tables exist. Build passed with zero TypeScript errors and the file was committed to git.
+Six new files were created and App.tsx was updated to replace the old CoreSIS stub with a fully functional Student Directory route and a StudentDetail stub. The directory renders a sortable, filterable table of students with initials-based avatars, status badges, and clickable rows that navigate to individual student profiles. Build passes clean with zero TypeScript or Vite errors.
 
 ## Decisions Made
-- `USE_MOCK` constant was dropped in favor of always trying Supabase first with try/catch fallback — cleaner and handles the real-world state where the URL is set but tables don't exist yet
-- `gradeLevel` and `gpa` are derived from the enrollment matching `academicYear` filter (defaulting to `CURRENT_YEAR = '2025-2026'`)
-- Relationship resolution skips orphaned records (other person not found in mockPersons) rather than throwing
-- Supabase `getStudentById` returns a stub with empty arrays for dependent tables that don't exist yet
-- Re-exported `StudentRow` intersection type so consumers don't have to re-declare it
+- Defined BadgeVariant locally in StudentTable rather than exporting it from Badge.tsx to avoid touching existing UI components
+- Used deterministic name hashing (djb2-style) for avatar color selection across 8 indigo/emerald/amber/rose/sky/violet/teal/orange pairs
+- status filter defaults to active on initial load to match typical school directory UX
+- StudentDetail.tsx is a stub — full implementation is Task 8+
 
 ## Files Changed
-- `src/services/students.ts` — created (214 lines)
+- src/components/Avatar.tsx — created (initials avatar with deterministic color, photo fallback)
+- src/components/Tabs.tsx — created (reusable tab nav with disabled state)
+- src/components/FilterBar.tsx — created (search input + grade/status dropdowns)
+- src/components/StudentTable.tsx — created (sortable table with Avatar + Badge)
+- src/pages/StudentDirectory.tsx — created (directory page with filters, results count, loading/empty states)
+- src/pages/StudentDetail.tsx — created (stub for routing)
+- src/App.tsx — updated routes: CoreSIS replaced by StudentDirectory + StudentDetail
+- src/pages/kernel/CoreSIS.tsx — deleted
 
 ## Blocked / Needs Input
-None. Build is green.
+None.
 
 ## Next Steps
-- Task 5: Build reusable UI components (Avatar, Tabs, FilterBar)
-- Task 6: StudentTable component consuming this service
+- Task 8: Student Detail page — header, profile tab, enrollment history
+- Task 9: Enrollment History and Activity Log components
+- Task 10: Full Student Detail page implementation
