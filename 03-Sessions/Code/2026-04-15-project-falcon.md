@@ -2,36 +2,32 @@
 date: 2026-04-15
 source: Claude Code
 project: Project Falcon
-duration: ~25 minutes
+duration_estimate: 30 min
 status: Complete
 ---
 
 ## Task
-Implement Tasks 5, 6, and 7 — reusable UI components (Avatar, Tabs, FilterBar), StudentTable, Student Directory page, and routing updates for the Project Falcon SIS.
+Implement Tasks 8-10 for Project Falcon: the student detail page header, profile tab, enrollment history tab, activity log tab, and the full StudentDetail page that assembles them.
 
 ## Outcome
-Six new files were created and App.tsx was updated to replace the old CoreSIS stub with a fully functional Student Directory route and a StudentDetail stub. The directory renders a sortable, filterable table of students with initials-based avatars, status badges, and clickable rows that navigate to individual student profiles. Build passes clean with zero TypeScript or Vite errors.
+All five components were created and the StudentDetail stub was replaced with a fully functional page. The build passes with zero TypeScript or Vite errors. The detail page renders a back-nav header with avatar, status badge, and four quick-stat cards; a tabbed layout with Profile, Enrollment History, Activity Log, and two disabled future tabs; and correctly wires mock data through the existing service layer.
 
 ## Decisions Made
-- Defined BadgeVariant locally in StudentTable rather than exporting it from Badge.tsx to avoid touching existing UI components
-- Used deterministic name hashing (djb2-style) for avatar color selection across 8 indigo/emerald/amber/rose/sky/violet/teal/orange pairs
-- status filter defaults to active on initial load to match typical school directory UX
-- StudentDetail.tsx is a stub — full implementation is Task 8+
+- Used Partial<Record<PersonStatus, BadgeVariant>> instead of Record to avoid TS errors since transferred is an EnrollmentStatus, not a PersonStatus
+- Kept the InfoRow helper local to StudentProfile.tsx since it is only used in one place
+- Address field joined with commas on a single line for compact Card layout
+- ActivityLog looks up changer names against mockPersons at render time
 
 ## Files Changed
-- src/components/Avatar.tsx — created (initials avatar with deterministic color, photo fallback)
-- src/components/Tabs.tsx — created (reusable tab nav with disabled state)
-- src/components/FilterBar.tsx — created (search input + grade/status dropdowns)
-- src/components/StudentTable.tsx — created (sortable table with Avatar + Badge)
-- src/pages/StudentDirectory.tsx — created (directory page with filters, results count, loading/empty states)
-- src/pages/StudentDetail.tsx — created (stub for routing)
-- src/App.tsx — updated routes: CoreSIS replaced by StudentDirectory + StudentDetail
-- src/pages/kernel/CoreSIS.tsx — deleted
+- src/components/StudentHeader.tsx - created (back button, avatar, name, status badge, 4 quick-stat cards)
+- src/components/StudentProfile.tsx - created (personal info, demographics with flags, relationships, roles)
+- src/components/EnrollmentHistory.tsx - created (table with year, grade, status badge, GPA, credits)
+- src/components/ActivityLog.tsx - created (chronological feed with Clock icon, change diff, changer name lookup)
+- src/pages/StudentDetail.tsx - replaced stub with full page (loading/not-found states, Tabs, conditional tab content)
 
 ## Blocked / Needs Input
 None.
 
 ## Next Steps
-- Task 8: Student Detail page — header, profile tab, enrollment history
-- Task 9: Enrollment History and Activity Log components
-- Task 10: Full Student Detail page implementation
+- Task 11: SQL migration files for Supabase
+- Task 12: Build verification and visual test pass
