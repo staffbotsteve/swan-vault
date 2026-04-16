@@ -7,36 +7,31 @@ status: Completed
 ---
 
 ## Task
-Build Phase 4 of the Student Information System: Academics module including Gradebook, Assignments, and Transcripts.
+Build Phase 8 — all 6 add-on modules for the Student Information System, replacing placeholder pages with fully functional React components backed by mock data and Supabase-first services.
 
 ## Outcome
-Phase 4 is fully implemented and deployed. The Gradebook page at /academics shows a section-selector dropdown with a spreadsheet-style table displaying per-student category averages and color-coded overall grades. The AssignmentDetail page at /academics/assignments/:id shows stats (mean, median, high, low) and a submissions table with status badges. The Transcript tab is now live on the Student Detail page for all students with completed academic years.
+All 6 add-on modules (Admissions, Health, Athletics, Climate & MTSS, Dining, Events) are now live and functional. Each module has a complete type definition, mock data set, async service layer with Supabase-first/mock fallback pattern, and a full-featured page component. The build passes with zero TypeScript errors (1,866 modules transformed). The old addons placeholder directory was deleted entirely.
 
-Build passed with zero TypeScript or Vite errors (1831 modules, 564ms).
+Data coverage: 15 applicants across 7 statuses + 3 admissions events; 20 student health records + 12 clinic visits; 8 sports + 40 roster entries across 12 athletes; 20 behavior incidents + 4 MTSS tier records; 20 meal plans + 60 meal transactions over 2 weeks; 8 school events + 45 registrations.
 
 ## Decisions Made
-- Used generator functions for all large mock datasets (grade categories, assignments, submissions, transcripts) — no manually written bulk records
-- Submissions use seeded deterministic pseudo-random (Math.sin) for realistic grade distribution without randomness across builds
-- Gradebook calculation: missing = 0 pts, excused = excluded from denominator
-- TranscriptTab shows no data message for Grade 9 students (current year only, no completed years)
-- Deleted src/pages/kernel/Academics.tsx placeholder after replacing with full implementation
+- Created a single shared src/types/addons.ts for all 6 modules to avoid fragmentation
+- Used Supabase-first / mock fallback pattern consistent with all prior modules
+- Health page uses a dedicated immunization compliance sub-table rather than inline column
+- Athletics eligibility report correctly deduplicates students appearing on multiple sport rosters
+- Events page lazy-loads registration data on expand rather than upfront
+- src/pages/addons/ directory deleted after all 6 files removed
 
 ## Files Changed
-- src/types/academics.ts (created)
-- src/data/mock-grade-categories.ts (created)
-- src/data/mock-assignments.ts (created)
-- src/data/mock-submissions.ts (created)
-- src/data/mock-transcripts.ts (created)
-- src/services/academics.ts (created)
-- src/pages/Academics.tsx (created)
-- src/pages/AssignmentDetail.tsx (created)
-- src/components/TranscriptTab.tsx (created)
-- src/App.tsx (updated)
-- src/pages/StudentDetail.tsx (updated)
-- src/pages/kernel/Academics.tsx (deleted)
+- Created: src/types/addons.ts
+- Created: src/data/mock-admissions.ts, mock-health.ts, mock-athletics.ts, mock-climate.ts, mock-dining.ts, mock-events.ts
+- Created: src/services/admissions.ts, health.ts, athletics.ts, climate.ts, dining.ts, events.ts
+- Created: src/pages/Admissions.tsx, Health.tsx, Athletics.tsx, Climate.tsx, Dining.tsx, Events.tsx
+- Modified: src/App.tsx (updated 6 lazy imports from ./pages/addons/* to ./pages/*)
+- Deleted: src/pages/addons/ (entire directory with 6 placeholder files)
 
 ## Blocked / Needs Input
-None.
+None. Build is clean.
 
 ## Next Steps
-Phase 5: Counseling & College Readiness
+- Phase 9: Integration Layer — connect services to live Supabase tables, add real-time subscriptions where applicable
