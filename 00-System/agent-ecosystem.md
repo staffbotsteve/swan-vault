@@ -48,7 +48,7 @@ flowchart TD
     end
 
     subgraph Projects["💼 PROJECTS — Work"]
-        P["~/project-folders/<project>/<br/>app · research · docs · decks · assets · archive"]
+        P["~/project-folders/<project>/<br/>app · engineering · marketing · finance · legal · assets · archive"]
     end
 
     subgraph Ext["☁️ External"]

@@ -34,12 +34,12 @@ Names only, never values.
 - Stripe keys — billing (Phase 10) — not yet provisioned
 
 ## Folder layout (`~/project-folders/project-falcon/`)
+Uses the role-first 7-folder template (see `05-Reference/templates/project-folder.md`).
 - `app/` — live Lovable app. Remote: `staffbotsteve/cbhs-0606856e`. Lovable syncs here.
-- `research/` — specs, design system, Lovable review screenshots. Remote: `staffbotsteve/swanbill-sis`.
-- `docs/` — white paper, strategic analysis, status summary, stakeholder update, chat summary, phase docs
-- `decks/` — presentations (`falcon-update.pptx` + archived versions)
+- `engineering/` — strategic analysis, status summary, phase specs, chat summaries, and `research/` subfolder (specs, design system, Lovable review — remote: `staffbotsteve/swanbill-sis`)
+- `marketing/` — white paper, stakeholder update, `decks/` (falcon-update + archived presentations)
 - `assets/` — architecture / data-flow / mind-map diagrams
-- `archive/` — deprecated: `cbhs-old/` (superseded Lovable fork), `vite-scaffold/` (stray standalone build), `early-schema/` (pre-Lovable SQL prototype)
+- `archive/` — deprecated: `cbhs-old/` (superseded Lovable fork), `vite-scaffold/` (stray standalone build), `early-schema/` (pre-Lovable SQL prototype), `steven-swan-full-project-summary.md` (April 7 cross-project summary, now stale)
 
 ## Key decisions (most recent first)
 - **2026-04-21**: Kept Lovable as the MVP build platform; Claude Code planned to take over for Phase 11+ (integration layer, AI intelligence, multi-tenant) where repo-level engineering dominates.

@@ -1,6 +1,6 @@
 ---
 type: moc
-updated: 2026-04-20
+updated: 2026-04-21
 ---
 
 # Projects — Map of Content
@@ -24,10 +24,10 @@ When a new project is added, append a row here first, then create the artifacts.
 | [[RampVantage]] | `rampvantage/` | `rampvantage` | `workspace-aviation-services` | Building | SwanBill |
 | [[Sleepy Storybook]] | `sleepy-storybook/` | `sleepy-storybook` | `workspace-sleepy-storybook` + `builds/easter-stories` | ✅ | SwanBill |
 | [[Providence Fire & Rescue]] | `providence-fire-rescue/` | — | — | — | Providence Fire & Rescue Inc. |
-| [[Providence Heli Watch]] | `providence-fire-rescue/providence-heli-watch/` | `providence-heli-watch` | — | — | Providence |
-| [[Blackhawk Rescue Hero]] | `providence-fire-rescue/blackhawk-rescue-hero/` | `blackhawk-rescue-hero` | — | — | Providence |
+| [[Providence Heli Watch]] | `providence-heli-watch/` | `providence-heli-watch` | — | — | Providence |
+| [[Blackhawk Rescue Hero]] | `blackhawk-rescue-hero/` | `blackhawk-rescue-hero` | — | — | Providence |
 | [[Incline Tahoe Executive Transport]] | `incline-tahoe-executive-transport/` | — | — | — | Incline Tahoe Executive Transport |
-| [[Incline Glide Transport]] | `incline-tahoe-executive-transport/incline-glide-transport/` | `incline-glide-transport` | — | — | Incline Tahoe Exec Transport |
+| [[Incline Glide Transport]] | `incline-glide-transport/` | `incline-glide-transport` | — | — | Incline Tahoe Exec Transport |
 | [[OZ Lease Scout]] | `oz-lease-scout/` | — | `workspace-scoutoz` | — | SwanBill |
 | [[Personal Assistant]] | `personal-assistant/` | — | — | — | Personal |
 | [[OpenClaw]] | `openclaw/` | — | — | droplet | Ops |
@@ -44,7 +44,7 @@ When a new project is added, append a row here first, then create the artifacts.
 | [[N21JZ]] | `n21jz/` | — | — | — | Aviation |
 | [[R22 Training]] | `r22-training/` | — | — | — | Aviation |
 | [[Taxes]] | `taxes/` | — | — | — | Personal |
-| [[CB Extravaganza]] | `cb-extravaganza/` | — | — | — | Personal/event |
+| [[CB Extravaganza]] | `cb-extravaganza/` | `cbextravaganza` | — | — | Personal → CBHS (fundraiser) |
 
 ## Archived
 

@@ -144,33 +144,33 @@
   <text x="700" y="934" text-anchor="middle" font-size="12" fill="#155E75" font-style="italic">~/project-folders/&lt;project&gt;/  ·  30-project portfolio</text>
 
   <g font-size="11">
-    <rect x="130" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="210" y="972" text-anchor="middle" font-weight="600" fill="#155E75">app/</text>
-    <text x="210" y="990" text-anchor="middle" fill="#475569">canonical code</text>
+    <rect x="90" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="169" y="972" text-anchor="middle" font-weight="600" fill="#155E75">app/</text>
+    <text x="169" y="990" text-anchor="middle" fill="#475569">production code</text>
 
-    <rect x="300" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="380" y="972" text-anchor="middle" font-weight="600" fill="#155E75">research/</text>
-    <text x="380" y="990" text-anchor="middle" fill="#475569">specs, audits</text>
+    <rect x="258" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="337" y="972" text-anchor="middle" font-weight="600" fill="#155E75">engineering/</text>
+    <text x="337" y="990" text-anchor="middle" fill="#475569">specs, architecture</text>
 
-    <rect x="470" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="550" y="972" text-anchor="middle" font-weight="600" fill="#155E75">docs/</text>
-    <text x="550" y="990" text-anchor="middle" fill="#475569">finished writing</text>
+    <rect x="426" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="505" y="972" text-anchor="middle" font-weight="600" fill="#155E75">marketing/</text>
+    <text x="505" y="990" text-anchor="middle" fill="#475569">decks, brand</text>
 
-    <rect x="640" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="720" y="972" text-anchor="middle" font-weight="600" fill="#155E75">decks/</text>
-    <text x="720" y="990" text-anchor="middle" fill="#475569">presentations</text>
+    <rect x="594" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="673" y="972" text-anchor="middle" font-weight="600" fill="#155E75">finance/</text>
+    <text x="673" y="990" text-anchor="middle" fill="#475569">models, investor</text>
 
-    <rect x="810" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="890" y="972" text-anchor="middle" font-weight="600" fill="#155E75">assets/</text>
-    <text x="890" y="990" text-anchor="middle" fill="#475569">diagrams, images</text>
+    <rect x="762" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="841" y="972" text-anchor="middle" font-weight="600" fill="#155E75">legal/</text>
+    <text x="841" y="990" text-anchor="middle" fill="#475569">contracts, IP</text>
 
-    <rect x="980" y="950" width="160" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
-    <text x="1060" y="972" text-anchor="middle" font-weight="600" fill="#155E75">archive/</text>
-    <text x="1060" y="990" text-anchor="middle" fill="#475569">abandoned, old</text>
+    <rect x="930" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="1009" y="972" text-anchor="middle" font-weight="600" fill="#155E75">assets/</text>
+    <text x="1009" y="990" text-anchor="middle" fill="#475569">shared media</text>
 
-    <rect x="1150" y="950" width="140" height="55" rx="6" fill="#F0FDFA" stroke="#0891B2" stroke-dasharray="4 2"/>
-    <text x="1220" y="972" text-anchor="middle" font-weight="600" fill="#155E75">README.md</text>
-    <text x="1220" y="990" text-anchor="middle" fill="#475569">→ vault CONTEXT</text>
+    <rect x="1098" y="950" width="158" height="55" rx="6" fill="#FFFFFF" stroke="#0891B2"/>
+    <text x="1177" y="972" text-anchor="middle" font-weight="600" fill="#155E75">archive/</text>
+    <text x="1177" y="990" text-anchor="middle" fill="#475569">deprecated</text>
   </g>
 
   <!-- External systems row -->
