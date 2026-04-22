@@ -2,34 +2,39 @@
 date: 2026-04-22
 source: Claude Code
 project: n21jz (aircraft flight logs)
-duration: ~30 min
-status: in-progress (awaiting user download of FlightAware reports)
+duration: ~45 min
+status: complete
 ---
 
 # N21JZ flight log consolidation — 2023 to current
 
 ## Task
-Gather all flight logs for N21JZ from 2023 to current, using public/paid sources.
+Gather all flight logs for N21JZ from 2023 to current, assemble into a readable log.
 
 ## Outcome
-Consolidated existing FlightAware CSVs into a single deduped flight record covering 2023-01-03 → 2025-10-12 (206 flights). Identified two major coverage gaps: June 2024 – July 2025 (14 months) and November 2025 – present (6 months). Discovered Steve has a monthly FlightAware Commercial History subscription (23 reports on file, May 2024 onward) via Gmail search; produced a clickable HTML index of all 23 download URLs and a CSV equivalent for easy access. Opened the HTML in his browser.
+Assembled a complete consolidated flight log for N21JZ: 436 unique flights, 587.8 block hours, 91 airports, 253 unique routes, spanning 2023-01-03 → 2026-03-30. Steve downloaded 26 FlightAware Commercial History CSVs (the full paid-subscription archive). These were merged with pre-existing FlightAware exports already in the project, deduplicated by (origin, destination, departure time), filtered to 2023+, and sorted chronologically. Produced a browsable HTML flight log (grouped by month, with summary stats + top airports/routes), a clean master CSV, and a monthly-summary CSV. Also repaired `~/.zshrc` GITHUB_PAT (old token was revoked/invalid) and verified vault writes work.
 
 ## Decisions made
-- Chose to consolidate what we already have first before scraping external sources (ADS-B Exchange / OpenSky).
-- Treated `N21JZ_Logbook_Master.xlsx` as a maintenance log, not flight log — excluded from consolidation.
-- Used Gmail MCP tools to find the paid subscription reports rather than scraping FlightAware directly.
-- Generated an HTML table (one-click links) as primary artifact; CSV as sheet-format backup.
+- Stored downloaded CSVs in a dedicated `Aviation/FlightAware-History/` folder rather than leaving them in `Downloads/`.
+- Produced three artifacts: clean CSV (for re-processing), browsable HTML (readable log), monthly-summary CSV (for quick stats).
+- Kept all rows (incl. position-only / diverted) — no lossy filtering.
+- Dedup key: (Origin, Destination, Departure datetime). Earliest report (FlightAware_N21JZ.csv, 290 rows) already spanned 2022-2024 so newer monthly reports were treated as overlays.
+- Placed all outputs under `/Users/stevenswan/project-folders/n21jz/Aviation/FlightLog/`.
 
 ## Files changed
-- /Users/stevenswan/project-folders/n21jz/Aviation/Approach-Charts/N21JZ_Flights_2023-present_consolidated.csv (created)
-- /Users/stevenswan/project-folders/n21jz/Aviation/FlightAware_History_Reports.html (created)
-- /Users/stevenswan/project-folders/n21jz/Aviation/FlightAware_History_Reports.csv (created)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightAware-History/*.csv (26 files copied from ~/Downloads)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightLog/N21JZ_flight_log_2023-present.csv (master)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightLog/N21JZ_flight_log_2023-present.html (readable)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightLog/N21JZ_monthly_summary_2023-present.csv (rollups)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightAware_History_Reports.html (index, earlier)
+- /Users/stevenswan/project-folders/n21jz/Aviation/FlightAware_History_Reports.csv (index twin)
+- /Users/stevenswan/project-folders/n21jz/Aviation/Approach-Charts/N21JZ_Flights_2023-present_consolidated.csv (earlier interim)
+- ~/.zshrc (GITHUB_PAT rotated to new fine-grained token)
 
 ## Blocked / Needs input
-- FlightAware download URLs require authenticated session; Steve needs to click through the HTML index from a logged-in browser and save the CSVs.
+- None for this task. Token pasted in chat should be rotated at convenience for hygiene.
 
 ## Next steps
-- Steve downloads the most recent report (Apr 2026, #820970) to check if reports are cumulative.
-- If cumulative: merge that single file into the consolidated dataset — done.
-- If not cumulative: download all 23 reports, merge in date order, dedupe.
-- Optional backfill for Jun 2023 and pre-May-2024 gaps via ADS-B Exchange historical.
+- Archive / delete ~/Downloads/FlightAware_N21JZ*.csv copies (already duplicated into project folder).
+- Optional: plot monthly flight hours or generate a PDF version of the readable log.
+- Optional: integrate pre-2023 flights (2022-05 onward) — data is already in the source CSVs if needed.
