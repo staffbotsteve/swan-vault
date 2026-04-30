@@ -5,14 +5,10 @@ slack: "#oz-lease-scout"
 created: 2026-04-29
 ---
 
-# Oz-Lease-Scout
+# OZ Lease Scout
 
-(description pending)
+SwanBill LLC product. Folder `/Users/stevenswan/project-folders/oz-lease-scout/engineering/`. OpenClaw workspace: `workspace-scoutoz`.
 
-## Status
+## When responding in this channel
 
-(initial bootstrap)
-
-## Decisions
-
-## Open questions
+(populate as the project progresses — currently early stage)
