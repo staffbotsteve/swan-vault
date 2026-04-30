@@ -2,17 +2,21 @@
 project: permitvantage
 entity: SwanBill LLC
 slack: "#permitvantage"
+website: https://permitvantage.io/
+github: permitvantage
 created: 2026-04-29
 ---
 
-# Permitvantage
+# PermitVantage
 
-AI building permit expediting
+AI-driven building permit review and expediting — upload plans, get code compliance analysis, submit to counties.
 
-## Status
+**Status:** Live (`https://permitvantage.io/`)
 
-(initial bootstrap)
+## Folder layout
 
-## Decisions
+`/Users/stevenswan/project-folders/permitvantage/app/`
 
-## Open questions
+## When responding in this channel
+
+If Steven says "the site" he means permitvantage.io. If he says "permits" the context is building permits, not other state filings (those are SOSFiler's domain).
