@@ -1,3 +1,7 @@
+---
+entity: E2S Properties AZ LLC
+---
+
 # Ray Fraud Dispute
 
 **Company:** E2S Properties AZ LLC
