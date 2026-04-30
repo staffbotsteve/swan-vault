@@ -1,3 +1,7 @@
+---
+entity: e2s Hospitality NV LLC
+---
+
 # Rosewood Tahoe
 
 **Company:** e2s Hospitality NV LLC
