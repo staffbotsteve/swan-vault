@@ -1,3 +1,7 @@
+---
+entity: Providence Fire & Rescue Inc.
+---
+
 # Capital Raise
 
 **Company:** Providence Fire & Rescue Inc.
