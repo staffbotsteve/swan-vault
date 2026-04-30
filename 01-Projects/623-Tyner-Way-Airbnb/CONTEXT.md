@@ -1,3 +1,7 @@
+---
+entity: e2s Properties LLC
+---
+
 # 623 Tyner Way Airbnb
 
 **Company:** e2s Properties LLC
