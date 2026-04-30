@@ -1,3 +1,7 @@
+---
+entity: e2s Hospitality CA LLC
+---
+
 # Chase The Sun
 
 **Company:** e2s Hospitality California LLC
