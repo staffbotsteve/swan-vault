@@ -1,3 +1,7 @@
+---
+entity: Providence Fire & Rescue Inc.
+---
+
 # Helicopter Acquisition
 
 **Company:** Providence Fire & Rescue Inc.
