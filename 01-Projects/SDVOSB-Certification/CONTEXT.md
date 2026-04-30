@@ -1,3 +1,7 @@
+---
+entity: Providence Fire & Rescue Inc.
+---
+
 # SDVOSB Certification
 
 **Company:** Providence Fire & Rescue Inc.
